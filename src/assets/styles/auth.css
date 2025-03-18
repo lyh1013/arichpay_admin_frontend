@@ -1,0 +1,11 @@
+.auth-background {
+  background-image: url(../../assets/images/shapes/blurry.png);
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (width > 560px) {
+  .auth-background {
+    background-size: contain;
+  }
+}
