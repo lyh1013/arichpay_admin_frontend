@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div></div>
+  <v-container> userView </v-container>
 </template>
 
 <style scoped></style>
