@@ -18,7 +18,7 @@ function toggleMenu() {
 
 <template>
   <v-sheet class="d-print-none header" :class="{ 'header-sticky': windowY > 100 }">
-    <v-container class="py-2">
+    <v-container fluid class="py-2 px-6">
       <v-toolbar density="compact" color="transparent" height="80">
         <v-app-bar-nav-icon class="d-block d-md-none" variant="text" @click.stop="toggleMenu" />
 
@@ -32,29 +32,47 @@ function toggleMenu() {
 
         <v-list
           class="align-items mx-auto parent d-none d-md-flex py-0 bg-transparent"
-          active-class="font-weight-bold text-primary "
+          active-class="text-primary "
         >
           <MenuList />
         </v-list>
 
         <v-spacer v-show="mdAndUp" />
 
-        <div class="d-flex align-center ga-2">
-          <span class="d-none d-md-block">艾創點工程師</span>
-          <v-btn
-            icon="mdi-account-outline"
-            variant="tonal"
-            to="/accounts/profile"
-            size="small"
-            rounded="xl"
-          />
-          <v-btn icon="mdi-logout" variant="tonal" size="small" rounded="xl" @click="logout" />
-        </div>
+        <v-list class="text-black">
+          <v-list-item class="cursor-pointer" title="艾創點工程師" subtitle="開發工程師" v-ripple>
+            <template v-slot:prepend>
+              <v-icon icon="fa:far fa-circle-user" size="20" class="me-3" />
+            </template>
+
+            <v-menu activator="parent" width="200" location="bottom end">
+              <v-list>
+                <v-list-item to="/accounts/profile">
+                  <v-list-item-title>個人資訊</v-list-item-title>
+                </v-list-item>
+
+                <v-divider class="my-2" />
+
+                <div class="px-4 py-2">
+                  <v-btn
+                    :loading="spinner"
+                    block
+                    size="small"
+                    color="red-lighten-1"
+                    append-icon="mdi-logout"
+                    text="登出"
+                    @click="logout"
+                  />
+                </div>
+              </v-list>
+            </v-menu>
+          </v-list-item>
+        </v-list>
       </v-toolbar>
 
       <v-navigation-drawer v-model="menuOpen" temporary>
         <v-card variant="flat" class="pa-4 h-screen" rounded="sm">
-          <div class="d-flex align-center justify-between">
+          <div class="d-flex align-center justify-between mb-6">
             <router-link to="/" class="w-100">
               <v-img max-width="120" src="@images/logo/logo.png" cover />
             </router-link>
@@ -62,7 +80,7 @@ function toggleMenu() {
             <v-icon icon="mdi-close" @click="toggleMenu" />
           </div>
 
-          <v-list class="parent" active-class="font-weight-bold text-primary mt-5">
+          <v-list class="parent" active-class="text-primary mt-5">
             <MenuList />
           </v-list>
         </v-card>

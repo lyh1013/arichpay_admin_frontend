@@ -8,6 +8,7 @@ import { initializeI18n } from '@/libs/i18n/index'
 import vuetify from '@/libs/vuetify/index'
 import { PerfectScrollbarPlugin } from 'vue3-perfect-scrollbar'
 import { createHead } from '@unhead/vue'
+import { VxeTable, VxeUI } from '@/libs/vxe-table/index'
 
 import '@/libs/vee-validate/index'
 
@@ -28,10 +29,12 @@ async function initializeApp() {
   app.use(vuetify)
   app.use(PerfectScrollbarPlugin, { componentName: 'vscrollbar' })
   app.use(head)
+  app.use(VxeTable)
+  app.use(VxeUI)
 
   app.mount('#app')
 }
 
-initializeApp().catch((error) => {
+initializeApp().catch(error => {
   console.error('Failed to initialize app:', error)
 })

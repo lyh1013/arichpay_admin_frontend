@@ -14,6 +14,24 @@ export default {
     create: '新增',
     edit: '編輯',
     preview: '瀏覽',
-    close: '關閉 | 取消'
+    saving: '儲存中',
+    enter: '確認 | OK | 完成',
+    remove: '刪除',
+    close: '關閉 | 取消',
+    batch: '批次選取 | 結束選取 | 已選取',
+    batchApply: '批次套用',
+    selected: '已選取 ({count}) 套用',
+    enable: '啟用',
+    disable: '停用',
+    reset: '清除 | 重設',
+    search: '搜尋'
+  },
+  confirm: {
+    removeTitle: '確認刪除',
+    remove: '您確定要刪除 {name} ?',
+    removeBatch: '刪除選取的 {count} 筆資料?'
+  },
+  catch: {
+    unexpectOccured: '發生不可預期的錯誤'
   }
 }

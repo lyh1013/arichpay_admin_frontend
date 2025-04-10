@@ -35,15 +35,21 @@ const onSubmit = handleSubmit((values: Record<string, string>) => {
           </v-alert>
 
           <v-col cols="12">
-            <v-form @submit.prevent="onSubmit" class="d-flex flex-column ga-6">
-              <TextField name="email" label="E-mail" prepend-inner-icon="mdi-email-outline" />
+            <v-form @submit.prevent="onSubmit" class="d-flex flex-column">
+              <v-row>
+                <v-col cols="12">
+                  <TextField name="email" label="E-mail" prepend-inner-icon="mdi-email-outline" />
+                </v-col>
 
-              <v-btn :loading size="large" type="submit" variant="flat" block text="送出" />
+                <v-col cols="12">
+                  <v-btn :loading size="large" type="submit" variant="flat" block text="送出" />
+                </v-col>
+              </v-row>
             </v-form>
 
             <div class="text-center mt-3">
               <span v-text="'已經有帳戶？'" />
-              <RouterLink class="text-blue ms-1" to="signin" v-text="'登入'" />
+              <RouterLink class="text-blue ms-1" to="signin">登入</RouterLink>
             </div>
           </v-col>
         </v-row>

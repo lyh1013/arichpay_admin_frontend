@@ -10,11 +10,16 @@ declare module 'vue' {
   export interface GlobalComponents {
     AlertDialog: typeof import('./src/components/AlertDialog.vue')['default']
     DataTable: typeof import('./src/components/DataTable.vue')['default']
+    DataTableBk: typeof import('./src/components/DataTable-bk.vue')['default']
+    DataTableHeader: typeof import('./src/components/DataTableHeader.vue')['default']
+    DtTable: typeof import('./src/components/DtTable.vue')['default']
     Modal: typeof import('./src/components/Modal.vue')['default']
     Overlay: typeof import('./src/components/Overlay.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SnackbarToast: typeof import('./src/components/SnackbarToast.vue')['default']
     TextField: typeof import('./src/components/TextField.vue')['default']
+    VDtHeader: typeof import('./src/components/VDtHeader.vue')['default']
+    VDtTable: typeof import('./src/components/VDtTable.vue')['default']
   }
 }

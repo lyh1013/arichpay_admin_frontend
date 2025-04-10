@@ -9,10 +9,13 @@ const { mdAndUp } = useDisplay()
 </script>
 
 <template>
-  <v-layout class="d-flex flex-column" :style="{ overflow: mdAndUp ? 'hidden' : 'visible' }">
+  <v-layout
+    class="d-flex flex-column background"
+    :style="{ overflow: mdAndUp ? 'hidden' : 'visible' }"
+  >
     <HeaderTop />
 
-    <v-main class="py-4 py-md-6">
+    <v-main class="py-4">
       <BreadCrumbs />
       <RouterView />
       <CookieToast />
@@ -20,4 +23,9 @@ const { mdAndUp } = useDisplay()
   </v-layout>
 </template>
 
-<style scoped></style>
+<style scoped>
+.background {
+  background: url(../../assets/images/bg/background.jpg) no-repeat;
+  background-size: cover;
+}
+</style>

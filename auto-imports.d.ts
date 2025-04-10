@@ -6,6 +6,7 @@
 // biome-ignore lint: disable
 export {}
 declare global {
+  const DtUtils: typeof import('@/libs/vxe-table/utils')['DtUtils']
   const EffectScope: typeof import('vue')['EffectScope']
   const FieldContextKey: typeof import('vee-validate')['FieldContextKey']
   const FormContextKey: typeof import('vee-validate')['FormContextKey']
@@ -157,6 +158,7 @@ declare global {
   const useBroadcastChannel: typeof import('@vueuse/core')['useBroadcastChannel']
   const useBrowserLocation: typeof import('@vueuse/core')['useBrowserLocation']
   const useCached: typeof import('@vueuse/core')['useCached']
+  const useClient: typeof import('./src/stores/client')['useClient']
   const useClipboard: typeof import('@vueuse/core')['useClipboard']
   const useClipboardItems: typeof import('@vueuse/core')['useClipboardItems']
   const useCloned: typeof import('@vueuse/core')['useCloned']
@@ -175,6 +177,7 @@ declare global {
   const useDebounce: typeof import('@vueuse/core')['useDebounce']
   const useDebounceFn: typeof import('@vueuse/core')['useDebounceFn']
   const useDebouncedRefHistory: typeof import('@vueuse/core')['useDebouncedRefHistory']
+  const useDeleteConfirm: typeof import('./src/composables/useDeleteConfirm')['useDeleteConfirm']
   const useDeviceMotion: typeof import('@vueuse/core')['useDeviceMotion']
   const useDeviceOrientation: typeof import('@vueuse/core')['useDeviceOrientation']
   const useDevicePixelRatio: typeof import('@vueuse/core')['useDevicePixelRatio']
@@ -204,6 +207,7 @@ declare global {
   const useFocusWithin: typeof import('@vueuse/core')['useFocusWithin']
   const useForm: typeof import('vee-validate')['useForm']
   const useFormErrors: typeof import('vee-validate')['useFormErrors']
+  const useFormUpdate: typeof import('./src/composables/useFormUpdate')['useFormUpdate']
   const useFormValues: typeof import('vee-validate')['useFormValues']
   const useFps: typeof import('@vueuse/core')['useFps']
   const useFullscreen: typeof import('@vueuse/core')['useFullscreen']
@@ -363,6 +367,7 @@ import { UnwrapRef } from 'vue'
 declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
+    readonly DtUtils: UnwrapRef<typeof import('@/libs/vxe-table/utils')['DtUtils']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly FieldContextKey: UnwrapRef<typeof import('vee-validate')['FieldContextKey']>
     readonly FormContextKey: UnwrapRef<typeof import('vee-validate')['FormContextKey']>
@@ -512,6 +517,7 @@ declare module 'vue' {
     readonly useBroadcastChannel: UnwrapRef<typeof import('@vueuse/core')['useBroadcastChannel']>
     readonly useBrowserLocation: UnwrapRef<typeof import('@vueuse/core')['useBrowserLocation']>
     readonly useCached: UnwrapRef<typeof import('@vueuse/core')['useCached']>
+    readonly useClient: UnwrapRef<typeof import('./src/stores/client')['useClient']>
     readonly useClipboard: UnwrapRef<typeof import('@vueuse/core')['useClipboard']>
     readonly useClipboardItems: UnwrapRef<typeof import('@vueuse/core')['useClipboardItems']>
     readonly useCloned: UnwrapRef<typeof import('@vueuse/core')['useCloned']>
@@ -529,6 +535,7 @@ declare module 'vue' {
     readonly useDebounce: UnwrapRef<typeof import('@vueuse/core')['useDebounce']>
     readonly useDebounceFn: UnwrapRef<typeof import('@vueuse/core')['useDebounceFn']>
     readonly useDebouncedRefHistory: UnwrapRef<typeof import('@vueuse/core')['useDebouncedRefHistory']>
+    readonly useDeleteConfirm: UnwrapRef<typeof import('./src/composables/useDeleteConfirm')['useDeleteConfirm']>
     readonly useDeviceMotion: UnwrapRef<typeof import('@vueuse/core')['useDeviceMotion']>
     readonly useDeviceOrientation: UnwrapRef<typeof import('@vueuse/core')['useDeviceOrientation']>
     readonly useDevicePixelRatio: UnwrapRef<typeof import('@vueuse/core')['useDevicePixelRatio']>
@@ -558,6 +565,7 @@ declare module 'vue' {
     readonly useFocusWithin: UnwrapRef<typeof import('@vueuse/core')['useFocusWithin']>
     readonly useForm: UnwrapRef<typeof import('vee-validate')['useForm']>
     readonly useFormErrors: UnwrapRef<typeof import('vee-validate')['useFormErrors']>
+    readonly useFormUpdate: UnwrapRef<typeof import('./src/composables/useFormUpdate')['useFormUpdate']>
     readonly useFormValues: UnwrapRef<typeof import('vee-validate')['useFormValues']>
     readonly useFps: UnwrapRef<typeof import('@vueuse/core')['useFps']>
     readonly useFullscreen: UnwrapRef<typeof import('@vueuse/core')['useFullscreen']>

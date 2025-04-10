@@ -58,7 +58,8 @@ export default defineConfig((): UserConfig => {
           {
             'vue-i18n': ['createI18n', 'useI18n'],
             '@appConfig': ['cfg'],
-            '@i18n': ['i18n']
+            '@i18n': ['i18n'],
+            '@/libs/vxe-table/utils': ['DtUtils']
           }
         ],
         dirs: ['./src/stores', './src/composables'],

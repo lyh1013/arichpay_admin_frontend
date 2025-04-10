@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { validationSchema } from '@/utils/form/profile'
+import { validationSchema } from '@/utils/form/validate-schema/profile'
 
 const { handleSubmit } = useForm({
   validationSchema,

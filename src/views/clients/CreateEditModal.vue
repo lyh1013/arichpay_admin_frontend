@@ -6,7 +6,9 @@ const { id, show, isAdd, isEdit, setTitle, setModal } = inject(useModalKey) as M
 setTitle('客戶資料')
 
 const { handleSubmit, resetForm, setFieldValue } = useForm({
-  validationSchema: {}
+  validationSchema: {
+    name: 'required'
+  }
 })
 
 watch([show, id], async ([isShow, id]) => {

@@ -47,20 +47,20 @@ const onSubmit = handleSubmit(async (values: { account: string; password: string
                 </v-col>
 
                 <v-col cols="12">
-                  <div class="d-flex align-end flex-column w-100">
+                  <TextField
+                    name="password"
+                    type="password"
+                    label="密碼"
+                    prepend-inner-icon="mdi-lock-outline"
+                    class="w-100"
+                  />
+                  <div class="w-100 d-flex justify-end mt-2">
                     <RouterLink
                       class="text-blue text-body-2 mb-1"
                       to="/forget"
                       rel="noopener noreferrer"
                       >忘記密碼?</RouterLink
                     >
-                    <TextField
-                      name="password"
-                      type="password"
-                      label="密碼"
-                      prepend-inner-icon="mdi-lock-outline"
-                      class="w-100"
-                    />
                   </div>
                 </v-col>
 

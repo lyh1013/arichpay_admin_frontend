@@ -39,12 +39,6 @@ const persistent = computed(() => (attrs?.persistent as boolean) ?? loading.valu
 const maxWidth = computed(() => (fullscreen ? undefined : thresholds.value[size as Thresholds]))
 const suppressScrollY = computed(() => !scrollable || (scrollable && loading.value))
 const scrollYDisplayStyle = computed(() => (suppressScrollY.value ? 'none' : 'block'))
-const isDialogActive = computed({
-  get: () => show.value && id.value === modalId,
-  set: (val: boolean) => {
-    if (!val) show.value = false
-  }
-})
 
 const scrollbarRef = useTemplateRef<MaybeRef>('scrollbar')
 const { height: contentHeight } = useElementSize(scrollbarRef)
@@ -97,12 +91,13 @@ function onAfterLeave() {
 
         <template v-slot:subtitle>
           <div class="d-flex align-center d-print-none">
-            <span>{{ subtitle }}</span>
+            <v-chip :text="subtitle" variant="tonal" density="comfortable" />
+
             <slot v-if="$slots?.header" name="header" />
           </div>
         </template>
 
-        <v-divider thickness="2" class="d-print-none" />
+        <v-divider thickness="1" class="d-print-none" />
 
         <vscrollbar
           ref="scrollbar"

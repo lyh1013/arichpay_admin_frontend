@@ -11,20 +11,20 @@ enum animationMap {
   success = 'animate__animated animate__bounceIn animate__fast',
   info = 'animate__animated animate__zoomIn',
   warning = 'animate__animated animate__tada',
-  error = 'animate__animated  animate__tada',
+  error = 'animate__animated  animate__tada'
 }
 
 enum alertColor {
   success = 'success',
   info = 'indigo-lighten-2',
   warning = 'orange-lighten-2',
-  error = 'red-lighten-2',
+  error = 'red-lighten-1'
 }
 
 const {
-  icon = '',
-  type = 'success',
-  size = 'sm',
+  icon = 'mdi-trash-can-outline',
+  type = 'error',
+  size = 'xs'
 } = defineProps<{
   icon: string
   type?: Alertype | string
@@ -54,10 +54,12 @@ const color = computed(() => alertColor[type as Alertype])
             <v-icon :color :icon size="70" class="mb-2" />
           </Transition>
 
-          <v-card-title class="my-2 font-weight-bold">{{ $attrs.title }}</v-card-title>
+          <v-card-title class="my-2 font-weight-bold" :class="`text-${color}`">{{
+            $attrs.title
+          }}</v-card-title>
 
           <v-card-text class="text-body-1">
-            <slot />
+            <slot name="content" />
           </v-card-text>
         </v-card-item>
 

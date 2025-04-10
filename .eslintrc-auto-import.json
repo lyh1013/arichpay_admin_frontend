@@ -355,6 +355,10 @@
     "createHead": true,
     "ModalProps": true,
     "useModal": true,
-    "useModalKey": true
+    "useModalKey": true,
+    "useDeleteConfirm": true,
+    "useFormUpdate": true,
+    "useClient": true,
+    "DtUtils": true
   }
 }

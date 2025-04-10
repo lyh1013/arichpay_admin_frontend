@@ -25,13 +25,14 @@ function isNavActive(item: Menu): boolean {
     :append-icon="children ? 'mdi-menu-down' : ''"
     active-class="active-menu"
     :class="{ 'active-menu': isNavActive({ to, title, icon, children }) }"
+    class="text-black my-2 d-flex align-items-center ga-1"
   >
     <v-menu v-if="children">
       <template v-slot:activator="{ props }">
         <span v-bind="props"> {{ title }} </span>
       </template>
 
-      <v-list class="mt-2" active-class="font-weight-bold text-primary">
+      <v-list class="mt-2" active-class="text-primary">
         <v-list-item
           v-for="{ to, title } in children"
           :key="title"

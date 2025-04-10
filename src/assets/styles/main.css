@@ -22,7 +22,7 @@ a {
 }
 
 .v-card-item .v-card-title {
-  font-weight: 600;
+  /* font-weight: 600; */
   font-size: 1.125rem;
 }
 
@@ -95,23 +95,15 @@ body .v-btn.v-btn--icon.v-btn--density-default.v-btn--size-default .v-icon {
     0 0 transparent;
 }
 
-.table-actions .v-btn.v-btn--icon.v-btn--density-default {
-  block-size: var(--v-btn-height);
-  inline-size: var(--v-btn-height);
-}
-
 .v-list-item__prepend > .v-icon ~ .v-list-item__spacer {
   width: 28px;
 }
 
-.v-table.v-table--fixed-header > .v-table__wrapper > table > thead > tr > th {
-  background: rgb(var(--v-theme-grey-100));
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.v-data-table-header__content {
-  color: rgb(var(--v-theme-grey-800));
+.v-label:not(.v-field-label--floating, .v-label--clickable) {
+  margin-bottom: 4px;
+  color: rgb(var(--v-theme-on-background));
+  font-size: 0.9375rem;
+  opacity: 1 !important;
 }
 
 @media (min-width: 1920px) {
