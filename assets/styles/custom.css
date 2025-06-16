@@ -1,0 +1,38 @@
+.text-h1,
+.text-h2,
+.text-h3,
+.text-h4,
+.text-h5,
+.text-h6 {
+  /* font-weight: 600 !important; */
+}
+
+.q-item__section--avatar {
+  min-width: auto !important;
+}
+
+.q-field__bottom {
+  padding-left: 0 !important;
+}
+
+.vxe-input {
+  --vxe-ui-input-height-default: 36px;
+}
+
+.q-field--dense .q-field__bottom {
+  font-size: 13px !important;
+}
+
+body.desktop .q-hoverable:hover > .q-focus-helper {
+  opacity: 0.1 !important;
+}
+
+.delete-icon .q-icon {
+  font-size: 1.75rem !important;
+}
+
+@media (max-width: 599.98px) {
+  .q-layout-padding {
+    padding: 16px !important;
+  }
+}

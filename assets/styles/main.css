@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+label {
+  font-size: 15px;
+}
+
+.card-shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.12) !important;
+}
+
+.card-mtn {
+  margin-top: -56px;
+}
+
+.w-fit {
+  width: fit-content !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.w-75 {
+  width: 75% !important;
+}
+
+.w-50 {
+  width: 50% !important;
+}
+
+.w-25 {
+  width: 25% !important;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #eee;
+}
+
+.form-title {
+  margin-bottom: 0.675rem;
+  font-size: 1.05rem;
+  /* font-weight: 600; */
+  color: var(--q-form-title);
+  position: relative;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-container table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container th,
+.table-container td {
+  white-space: nowrap;
+  padding: 8px 12px;
+  border: 1px solid #eee;
+}
+
+.table-container th {
+  color: #555657;
+  background-color: #f8f8f9c3;
+}
+
+.table-container td {
+  padding: 12px 15px;
+}
